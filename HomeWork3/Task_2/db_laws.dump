@@ -1,0 +1,112 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: law; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE law (
+    id_law integer NOT NULL,
+    title_law character varying(200) NOT NULL,
+    scr_law text NOT NULL,
+    description_law text
+);
+
+
+ALTER TABLE public.law OWNER TO postgres;
+
+--
+-- Name: law_id_law_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE law_id_law_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.law_id_law_seq OWNER TO postgres;
+
+--
+-- Name: law_id_law_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE law_id_law_seq OWNED BY law.id_law;
+
+
+--
+-- Name: id_law; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY law ALTER COLUMN id_law SET DEFAULT nextval('law_id_law_seq'::regclass);
+
+
+--
+-- Data for Name: law; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY law (id_law, title_law, scr_law, description_law) FROM stdin;
+1	О внесении изменений в статьи 12 и 25 Федерального закона «Об основах социального обслуживания граждан в Российской Федерации	http://sozd.parlament.gov.ru/bill/366426-7	\N
+2	О государственном оборонном заказе	http://sozd.parlament.gov.ru/bill/31990-6	\N
+3	О принятии конституции	http://sozd.parlament.gov.ru/bill/12313-4	\N
+\.
+
+
+--
+-- Name: law_id_law_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('law_id_law_seq', 3, true);
+
+
+--
+-- Name: law_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY law
+    ADD CONSTRAINT law_pk PRIMARY KEY (id_law);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
