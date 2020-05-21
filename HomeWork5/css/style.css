@@ -1,0 +1,77 @@
+/* Fields style start */
+
+p, input {
+    padding: 5px;
+    margin: 0;
+    font-size: 16px;
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+    margin-top: 15px;
+}
+
+textarea{
+    width: 102.5%;
+    height: 150px;
+}
+
+/* Fields style end */
+
+/* Validate style start */
+
+input:invalid {
+    border: 1.5px dashed red;
+}
+
+input:valid {
+    border: 1px solid black;
+}
+
+/* Validate style end */
+
+/* Error style start */
+
+.error {
+    padding: 0.3em;
+    width: 230px;
+    display: none;
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.error_active {
+    display: block;
+}
+
+/* Error style end */
+
+/* Form style start */
+
+.btn{
+    width: 150px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    padding-right: 35px;
+}
+
+/* Form style end */
