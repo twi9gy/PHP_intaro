@@ -70,7 +70,7 @@ function Validate() {
     // проверка ФИО
     if(count == 0) {
         var fullname = $('#form_send').find($('input[name=fullname]'));
-        var pattern = new RegExp("[а-яА-Я]+ [а-яА-Я]+ [а-я-А-Я]+");
+        var pattern = new RegExp("[а-яА-Я]+ [а-яА-Я]+ [а-яА-Я]+");
         if (!pattern.test($(fullname).val())) {
             var error = $(fullname).next();
             $(error).text("Некорректное ФИО");
